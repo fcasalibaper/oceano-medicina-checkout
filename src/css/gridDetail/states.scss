@@ -1,0 +1,20 @@
+.dropdown {
+  &--clickEvent {
+    &.active {
+      p {
+        @include downTo(md) {
+          padding-bottom: 1rem;
+        }
+        i {
+          &:before {
+            content: "\e911";
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    height: auto;
+  }
+}

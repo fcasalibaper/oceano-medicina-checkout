@@ -1,0 +1,96 @@
+// GRID
+$TOTAL_GRID : 12;
+$GRID_SIZES: xs, sm, md, lg, xl;
+
+.col {
+  @for $i from 1 through $TOTAL_GRID {
+    &-#{$i} {
+      width:  #{$i * 100 / $TOTAL_GRID }%  !important;
+    }
+  }
+  @each $SIZE in $GRID_SIZES {
+    @for $i from 1 through $TOTAL_GRID {
+      @if $SIZE!=xs {
+        @include upTo($SIZE) {
+          &-#{$SIZE}-#{$i} {
+            width:  #{$i * 100 / $TOTAL_GRID }%  !important;
+          }
+        }
+      }
+      @else if $SIZE==xs {
+        @media only screen and (min-width: 0) {
+          &-xs-#{$i} {
+            width: #{$i * 100 / $TOTAL_GRID }%  !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// paddings
+$TOTAL_PADDING : 25;
+$PADDING_POSITIONS: top, left, bottom, right;
+
+.p {
+  @for $i from 0 through $TOTAL_PADDING {
+    @each $POSITIONS in $PADDING_POSITIONS {
+      &-#{$POSITIONS}-#{$i} {
+        padding-#{$POSITIONS}: #{$i}px;
+      }
+    }
+  }
+
+  @each $POSITIONS in $PADDING_POSITIONS {
+    @each $SIZE in $GRID_SIZES {
+      @for $i from 0 through $TOTAL_PADDING {
+        @if $SIZE==xs {
+          @media only screen and (min-width: 0) {
+            &-xs-#{$POSITIONS}-#{$i} {
+              padding-#{$POSITIONS}: #{$i}px !important;
+            }
+          }
+        }
+        @else if $SIZE!=xs {
+          @include upTo($SIZE) {
+            &-#{$SIZE}-#{$POSITIONS}-#{$i} {
+              padding-#{$POSITIONS}: #{$i}px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// MARGIN
+.m {
+  @for $i from 0 through $TOTAL_PADDING {
+    @each $POSITIONS in $PADDING_POSITIONS {
+      &-#{$POSITIONS}-#{$i} {
+        margin-#{$POSITIONS}: #{$i}px;
+      }
+    }
+  }
+
+  @each $POSITIONS in $PADDING_POSITIONS {
+    @each $SIZE in $GRID_SIZES {
+      @for $i from 0 through $TOTAL_PADDING {
+        @if $SIZE==xs {
+          @media only screen and (min-width: 0) {
+            &-xs-#{$POSITIONS}-#{$i} {
+              margin-#{$POSITIONS}: #{$i}px !important;
+            }
+          }
+        }
+        @else if $SIZE!=xs {
+          @include upTo($SIZE) {
+            &-#{$SIZE}-#{$POSITIONS}-#{$i} {
+              margin-#{$POSITIONS}: #{$i}px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

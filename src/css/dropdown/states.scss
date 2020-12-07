@@ -1,0 +1,8 @@
+.dropdown {
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    height: auto;
+  }
+}

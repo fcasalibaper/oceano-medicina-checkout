@@ -1,0 +1,12 @@
+.forms {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 25px;
+
+  @include break(xs) {
+    padding-top: 10px;
+  }
+}

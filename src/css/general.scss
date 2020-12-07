@@ -1,0 +1,100 @@
+.cFull {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.txc {
+  text-align: center;
+}
+.txcDesktop {
+  @include upTo(sm) {
+   text-align: center;
+  }
+}
+
+.overlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(#000000, 0);
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 1.5rem 0 2rem;
+  
+  @include upTo(xs) {
+    padding: 2rem 0 4rem;
+
+    &--noPadding {
+      padding: 0;
+    }
+  }
+}
+
+.container {
+  margin:auto;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-left: $PADDING_MOBILE;
+  padding-right: $PADDING_MOBILE;
+  flex-direction: column;
+
+  @include upTo(xs) {
+    max-width: $sm;
+    padding-left: $PADDING_SM;
+    padding-right: $PADDING_SM;
+    flex-direction: row;
+  }
+  @include upTo(sm) {
+    max-width: $md;
+  }
+  @include upTo(md) {
+    max-width: $lg;
+  }
+  @include upTo(lg) {
+    max-width: $xl;
+  }
+
+  &--small {
+    padding: 0;
+    @include upTo(md) {
+      max-width: $SMALL_CONTAINER;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  &--center {
+    align-items: center;
+  }
+
+  #referenceFixedPosition {
+    @include downTo(md) {
+      position: relative;
+      + .fixedPosition {
+        margin: 0;
+        z-index: 9; 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+     }
+    }
+  }
+}

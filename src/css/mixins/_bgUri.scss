@@ -1,0 +1,6 @@
+@mixin bgUri($bg, $size: 10px, $bgposition: 96% 50%) {
+  background-image: url($bg);
+  background-repeat: no-repeat;
+  background-position: $bgposition;
+  background-size: $size;
+}

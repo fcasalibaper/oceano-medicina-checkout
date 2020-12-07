@@ -1,0 +1,52 @@
+{
+  "name": "oceano",
+  "version": "1.0.0",
+  "description": "Oceano Medicina",
+  "main": "index.js",
+  "browserslist": [
+    "last 4 version",
+    "> 2%"
+  ],
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "author": "Fernando Casaliba Perlangeli",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-csso": "^3.0.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-util": "^3.0.8",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.12.0",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
+    "precss": "^1.4.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-file-include": "^2.2.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.0",
+    "natives": "^1.1.6",
+    "popper.js": "^1.15.0",
+    "slick-carousel": "^1.8.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

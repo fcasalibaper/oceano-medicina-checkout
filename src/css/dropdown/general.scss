@@ -1,0 +1,23 @@
+$PADD_LR : 23px;
+$PADD_TB : 14px;
+
+// Dropdown
+.dropdown {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  flex-direction: column;
+  top: 82%;
+  height: 0;
+  overflow: hidden;
+  z-index: 9;
+  transition: all $ANIMATION_TIMING $ANIMATION_EASING;
+  width: 100%;
+  z-index: 1;
+
+  &--clickEvent {
+    cursor: pointer;
+    position: relative;
+  }
+}

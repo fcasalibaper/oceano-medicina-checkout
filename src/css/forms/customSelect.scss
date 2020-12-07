@@ -1,0 +1,229 @@
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+
+  small {
+    color: $COLOR_GREY;
+    @include fontSize(14px);
+    position: absolute;
+    top: -10px;
+    font-weight: $REGULAR;
+  }
+  
+  .custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    justify-content: center;
+    line-height: 1;
+    letter-spacing: normal;
+    
+    &.open {
+      .custom-options {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+      .arrow {
+        transform: rotateX(180deg);
+      }
+    }
+
+    &__trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      input.form-control {
+        overflow: hidden;
+        width: 0;
+        height: 0;
+
+        &.is-invalid,
+        &:invalid {
+          & + span {
+            border-bottom-color: $COLOR_INVALID_FORM;
+          }
+        }
+
+        &:valid,
+        .is-valid {
+          & + span {
+            border-bottom-color: $COLOR_VALID_FORM;
+          }
+        }
+      }
+
+      span {
+        width: 100%;
+        text-transform: capitalize;
+        letter-spacing: normal;
+        font-weight: $REGULAR;
+        line-height: 1.15;
+        color: $COLOR_INPUT;
+        height: $INPUT_HEIGHT_DESKTOP;
+        background-color: $COLOR_BG_INPUTS;
+        @include fontSize($INPUT_FONT_SIZE);
+        color: $COLOR_INPUT;
+        padding: $INPUT_PADDING;
+        border-radius: $INPUT_BORDER_RADIUS;
+        border: $INPUT_BORDER;
+        border-bottom: $INPUT_BORDER_BOTTOM;
+        vertical-align: middle;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include break(xs) {
+          @include fontSize($INPUT_FONT_SIZE_MOBILE);
+          height: $INPUT_HEIGHT_MOBILE;
+          padding: $INPUT_PADDING_MOBILE;
+          line-height: 1.5;
+        }
+
+        & > span {
+          border-bottom: none;
+        }
+
+        &.placeholder {
+          color: $COLOR_PLACEHOLDER;
+        }
+
+        &.icon {
+          height: inherit;
+          padding: 0;
+          position: relative;
+          top:-0.3rem;
+          margin-right: .5rem;
+          font-size: 1.5em;
+          border-bottom: none !important;
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        right: 0;
+        transition: $TRANSITION;
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          width: 0; 
+          height: 0; 
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 10px solid $COLOR_DARKGREY;
+        }
+      }
+    }
+  }
+
+  .custom-options {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    transition: $TRANSITION;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    max-height: 340px;
+
+    @include downTo(md) {
+      max-width: 100%;
+    }
+
+    .custom-option {
+      position: relative;
+      display: block;
+      padding: $INPUT_PADDING_TOP_BOTTOM 24.4px;
+      @include fontSize(18px);
+      font-weight: $REGULAR;
+      color: $COLOR_DARKGREY3;
+      cursor: pointer;
+      transition: $TRANSITION;
+      white-space: nowrap;
+
+      .icon {
+        position: relative;
+        left: -.5rem;
+        margin-right: .2rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $COLOR_OPTION;
+      }
+
+      &.selected {
+        background-color: $COLOR_OPTION;
+      }
+
+      // CHECKBOX STYLE
+      &--box {
+        .close {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 6%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 1px solid $COLOR_GREY;
+          }
+        }
+
+        &.selected {
+          .close {
+            &:before {
+              @extend .icon;
+              content: $icon-checked;
+              font-size: 1em;
+              position: absolute;
+              top: 50%;
+              right: 6%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+
+    &.country {
+      width: 115%;
+      max-width: 115%;
+      @include upTo(sm) {
+        width: 105%;
+      }
+      .custom-option {
+        @include downTo(md) {
+          @include fontSize(17px);
+          padding: 11px 20px;
+        }
+      }
+    }
+  }
+
+  &--multi {
+    span {
+      text-transform: none !important;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.gridDetail {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include upTo(sm) {
+    flex-flow: row nowrap;
+  }  
+  
+  &__box {
+    border: 1px solid $COLOR_GREY;
+    border-bottom: none;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 10px;
+
+    // drodown element
+    &:last-child {
+      p {
+        flex-direction: row;
+      }
+    }
+
+    @include upTo(sm) {
+      padding: 33.5px 10px;
+      border-right: none;
+      border-bottom: 1px solid $COLOR_GREY;
+    } 
+
+    // DROPDOWN
+    &.dropdown--clickEvent {
+      @include downTo(md) {
+        border-bottom: 1px solid $COLOR_GREY;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @include upTo(sm) {
+        flex-direction: row;
+        border-right: 1px solid $COLOR_GREY;
+      }
+
+      i {
+        position: relative;
+        @include fontSize(11px);
+        color: $COLOR_CELESTE;
+        margin-left: 1.2rem;
+        @extend .icon;
+        &:before {
+          content: "\e908";
+        }
+      }
+    }
+
+    p {
+      @include fontSize(20px);
+      font-weight: $MEDIUM;
+      color: $COLOR_DARKGREY;
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap;
+      @include break(md) {
+        @include fontSize(16px);
+      }
+
+      @include upTo(md) {
+        @include fontSize(22px);
+        flex-direction: row;
+      }
+      
+      span {
+        color: $COLOR_BLUE;
+
+        @include upTo(md) {
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    i {
+      color: $COLOR_CELESTE;
+    }
+  }
+
+  &--dark {
+    .gridDetail__box {
+      border-color: #ffffff;
+      p {
+        color: #BCBBBB;
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

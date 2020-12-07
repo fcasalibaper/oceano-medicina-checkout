@@ -1,0 +1,49 @@
+.toolresponsive {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 300;
+  padding: 1em;
+  background-color: rgba(black, 0.3);
+  border-radius: 100%;
+  border-bottom-left-radius: 0;
+  z-index: 999999999999;
+
+  .toolresponsive__break {
+    display: none;
+    color: white;
+    
+    @include break(xl) {
+      &--xl {
+        display: flex;
+      }
+    }
+
+    @include break(lg) {
+      &--lg {
+        display: flex;
+      }
+    }
+
+    @include break(md) {
+      &--md {
+        display: flex;
+      }
+    }
+
+    @include break(sm) {
+      &--sm {
+        display: flex;
+      }
+    }
+
+    @include break(xs) {
+      &--xs {
+        display: flex;
+      }
+    }
+  }
+
+}
