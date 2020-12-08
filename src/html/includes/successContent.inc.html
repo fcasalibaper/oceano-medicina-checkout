@@ -1,0 +1,90 @@
+<div class="section checkout checkout--success">
+  <div class="container card">
+    <div class="checkout__wrapper">
+
+      <form class="needs-validation" novalidate>
+        <div class="form__wrapper">
+          <div class="checkout--success__stateOrder">
+            <figure>
+              <img src="images/check-circle.gif" />
+            </figure>
+            <h3>
+              Su pago fue procesado<br />
+              <small>Verifique su casilla de e-mail.</small>
+            </h3>
+          </div>
+
+          <legend>
+            <h3>
+              <small>N° de contrato: 0002554581006587215</small>
+            </h3>
+          </legend>
+          
+          <div class="data col-xs-12">
+            <header>
+              <h4>Datos personales</h4>
+            </header>
+            <ul class="data__body">
+              <li>
+                <label for="data_phone">
+                  Numero de teléfono:
+                </label>
+                <span>
+                  1133445566
+                </span>
+                <input type="number" id="data_phone" class="form-control" required />
+              </li>
+              <li>
+                <label for="data_mail">
+                  Email:
+                </label>
+                <span>
+                  Juancarlospileta@sarasa.com
+                </span>
+                <input type="email" id="data_mail" class="form-control" required />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="checkout__summary">
+          <h3>
+            <span>Resumen de pago</span>
+            <span class="hidden-xs">Total</span>
+          </h3>
+          <ul class="checkout__summary__ul">
+            <li>
+              <span class="detail"><b>1</b> Curso Superior de Gastroenterología</span>
+              <div class="cuota hidden-xs">
+                <span class="cuotaValue">1 cuota</span>
+                <span class="cuotaPrice">$2.500</span>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="visible-xs">
+            <span>Total</span>
+          </h3>
+
+          <ul class="checkout__summary__ul checkout__summary__ul--prices visible-xs">
+            <li>
+              <div class="cuota">
+                <span class="cuotaValue">1 cuota</span>
+                <span class="cuotaPrice">$2.500</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="checkout__summary__info">
+            Los precios están expresados en dólares estadounidenses
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn--filled btn--filled--secondary">PAGAR</button>
+      </form>
+
+      <!-- footer -->
+      @@include('footerCheckout.inc.html')
+    </div>
+  </div>
+</div>

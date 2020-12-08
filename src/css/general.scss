@@ -5,6 +5,14 @@
   flex-direction: column;
 }
 
+%hiddenInput {
+  overflow: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  padding: 0;
+}
+
 .txc {
   text-align: center;
 }

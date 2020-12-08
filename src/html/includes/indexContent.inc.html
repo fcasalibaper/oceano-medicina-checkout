@@ -1,0 +1,160 @@
+<div class="section checkout">
+  <div class="container card">
+    <div class="checkout__wrapper">
+      
+      <div class="checkout__detailHightlight card card--lightblue">
+        <hgroup class="col-xs-12 col-sm-6">
+          <h2>
+            Curso Superior de Gastroenterología
+          </h2>
+        </hgroup>
+        <div class="price col-xs-12 col-sm-6">
+          <h1>
+            <b>$2.500</b>
+            <small>$3000</small>
+          </h1>
+
+          <span>
+            Compra en 1 cuota con descuento
+          </span>
+        </div>
+      </div>
+      
+      <form class="needs-validation" novalidate>
+        <div class="form__wrapper">
+
+          <legend>
+            <h3>
+              Pago con tarjeta
+              <small>N° de contrato: 0002554581006587215</small>
+            </h3>
+          </legend>
+
+          <div class="form-row colWrapMobile">
+            <div class="col xCenter">
+              <div class="custom-select-wrapper custom-select-wrapper--single col-xs-12 col-sm-8">
+                <div class="custom-select">
+                  <div class="custom-select__trigger">
+                    <input name="profesion" id="profesion" class="form-control" required />
+                    <span class="placeholder">Seleccione cantidad de cuotas</span>
+                    <div class="arrow"></div>
+                  </div>
+                  <div class="custom-options custom-options--points custom-options--single">
+                    <span class="custom-option"><b>1 cuota de $2.500</b></span>
+                    <span class="custom-option"><b>3 cuotas de $1.000</b><em>Total $3.000</em></span>
+                    <span class="custom-option"><b>6 cuotas de $600</b><em>Total $3.000</em></span>
+                    <span class="custom-option"><b>9 cuotas de $600</b><em>Total $3.000</em></span>
+                    <span class="custom-option"><b>12 cuotas de $600</b><em>Total $3.000</em></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-select-wrapper custom-select-wrapper--single col-xs-12 col-sm-4">
+                <div class="custom-select">
+                  <div class="custom-select__trigger">
+                    <input name="especialidad" id="especialidad" class="form-control" required />
+                    <span class="placeholder">País</span>
+                    <div class="arrow"></div>
+                  </div>
+                  <div class="custom-options custom-options--single country">
+                    <span class="custom-option">@@include('../icons/ar.html') ARG</span>
+                    <span class="custom-option">@@include('../icons/bo.html') BOL</span>
+                    <span class="custom-option">@@include('../icons/ch.html') CHI</span>
+                    <span class="custom-option">@@include('../icons/col.html') COL</span>
+                    <span class="custom-option">@@include('../icons/cos.html') COS</span>
+                    <span class="custom-option">@@include('../icons/ec.html') ECU</span>
+                    <span class="custom-option">@@include('../icons/sal.html') SAL</span>
+                    <span class="custom-option">@@include('../icons/gua.html') GUA</span>
+                    <span class="custom-option">@@include('../icons/hon.html') HON</span>
+                    <span class="custom-option">@@include('../icons/mex.html') MEX</span>
+                    <span class="custom-option">@@include('../icons/nic.html') NIC</span>
+                    <span class="custom-option">@@include('../icons/pan.html') PAN</span>
+                    <span class="custom-option">@@include('../icons/pa.html') PAR</span>
+                    <span class="custom-option">@@include('../icons/pe.html') PER</span>
+                    <span class="custom-option">@@include('../icons/dom.html') DOM</span>
+                    <span class="custom-option">@@include('../icons/ur.html') URU</span>
+                    <span class="custom-option">@@include('../icons/ven.html') VEN</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+              <input id="nameCard" type="text" class="form-control col-xs-12" minlength="3" placeholder="Nombre de títular de tarjeta*" required />
+          </div>
+
+          <div class="form-row">
+            <div class="col colNoWrap xCenter">
+              <input id="nroCard" type="text" class="form-control col-xs-6 creditCardText numbsSpace" placeholder="Número de tarjeta*" minlength="13" maxlength="19" required />
+              <input id="venc" type="text" class="form-control numbsDash col-xs-3 monthYear" placeholder="MM/AA*" minlength="5" maxlength="5" required />
+              <input id="cvc" type="password" class="form-control numbs col-xs-3" placeholder="CVC*" minlength="3" maxlength="3" required/>
+            </div>
+          </div>
+          
+          <div class="data col-xs-12">
+            <header>
+              <h4>Datos personales</h4>
+              <a href="#">Editar</a>
+            </header>
+            <ul class="data__body">
+              <li>
+                <label for="data_phone">
+                  Numero de teléfono:
+                </label>
+                <span>
+                  1133445566
+                </span>
+                <input type="number" id="data_phone" class="form-control" required />
+              </li>
+              <li>
+                <label for="data_mail">
+                  Email:
+                </label>
+                <span>
+                  Juancarlospileta@sarasa.com
+                </span>
+                <input type="email" id="data_mail" class="form-control" required />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="checkout__summary">
+          <h3>
+            <span>Resumen de pago</span>
+            <span class="hidden-xs">Total</span>
+          </h3>
+          <ul class="checkout__summary__ul">
+            <li>
+              <span class="detail"><b>1</b> Curso Superior de Gastroenterología</span>
+              <div class="cuota hidden-xs">
+                
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="visible-xs">
+            <span>Total</span>
+          </h3>
+
+          <ul class="checkout__summary__ul checkout__summary__ul--prices visible-xs">
+            <li>
+              <div class="cuota">
+              </div>
+            </li>
+          </ul>
+
+          <div class="checkout__summary__info">
+            Los precios están expresados en dólares estadounidenses
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn--filled btn--filled--secondary">PAGAR</button>
+      </form>
+
+      <!-- footer -->
+      @@include('footerCheckout.inc.html')
+    </div>
+  </div>
+</div>

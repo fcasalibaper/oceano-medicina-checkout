@@ -1,0 +1,70 @@
+.checkout {
+  &--success {
+    form .form__wrapper {
+      padding-top: 4.5rem;
+
+      @include upTo(sm) {
+        padding-top: 2rem;
+      }
+
+      legend {
+        margin-bottom: 1.5rem;
+      }
+    };
+
+    .card {
+      margin-top: 1.65rem;
+      @include upTo(sm) {
+        margin-top: -2.7rem;
+      }
+    }
+
+    &__stateOrder {
+      margin-bottom: 5rem;
+
+      @include upTo(sm) {
+        margin-bottom: 7rem;
+      }
+
+      figure {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 3em;
+
+        img {
+          margin: auto;
+        }
+      }
+
+      h3 {
+        display: flex;
+        flex-direction: column;
+        font-weight: $BOLD;
+        @include fontSize(32px);
+        color: $COLOR_BLUE;
+        text-align: center;
+
+        @include upTo(sm) {
+          @include fontSize(38px);
+          text-align: left;
+        }
+        
+        small {
+          font-weight: $MEDIUM;
+          margin-top: 2rem;
+          @include fontSize(18px);
+          color: $COLOR_DARKGREY4;
+          @include upTo(sm) {
+            @include fontSize(20px);
+          }
+        }
+      }
+    }
+
+    .data {
+      padding-top: 0;
+    }
+  }
+}

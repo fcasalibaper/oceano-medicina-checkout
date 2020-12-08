@@ -1,11 +1,30 @@
 .form-row {
   // margin-right: -$INPUT_MARGINS / 2;
   // margin-left: -$INPUT_MARGINS / 2;
-  margin-bottom: $INPUT_HEIGHT_DESKTOP;
+  margin-bottom: $INPUT_HEIGHT_DESKTOP / 3;
 
   @include break(xs) {
     flex-direction: column;
-    margin-bottom: #{$INPUT_HEIGHT_MOBILE / 1.4};
+    margin-bottom: #{$INPUT_HEIGHT_MOBILE / 3};
+  }
+
+  &.colWrapMobile {
+    @include break(xs) {
+      margin-bottom: 0;
+      [class*="col-xs-"] {
+        margin-bottom: #{$INPUT_HEIGHT_MOBILE / 3};
+      }
+    }
+    .col {
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      @include break(xs) {
+        flex-wrap: wrap;
+      }
+    }
+    
+    
   }
   
   .col {
@@ -35,18 +54,6 @@
     &.colNoWrap {
       flex-direction: row;
       flex-wrap: nowrap !important;
-    }
-
-    &.colWrapMobile {
-      @include break(xs) {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .col {
-          margin-right: 0;
-          margin-left: 0;
-        }
-      }
     }
 
     &.xCenter {

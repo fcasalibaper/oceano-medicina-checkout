@@ -1,167 +1,41 @@
-.header {
-  position: absolute;
-  z-index: 1;
-  padding-top: 27px;
+header.headerCheckout {
+  position: relative;
+  background-color: $COLOR_BLUE;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  z-index: 0;
 
   @include upTo(sm) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 31px 0;
-  }
-  
-  .container {
-    position: initial;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-
-    @include upTo(sm) {
-      align-items: center;
-    }
+    padding: 96.5px 0;
   }
 
-  // logo
-  &__logo {
+
+  a {
+    max-width: 147px;
+    width: 100%;
     text-decoration: none;
-    position: relative;
-    left: -.3rem;
+    outline: none;
 
+    @include upTo(sm) {
+      max-width: 187px;
+    }
+
+    &:visited,
+    &:focus {
+      border: 0;
+      text-decoration: none;
+      outline: none;
+    }
     i {
-      @include fontSize(44.5px);
+      font-size: 7em;
+
       @include upTo(sm) {
-        @include fontSize(57px);
+        font-size: 9em;
       }
-    }
-  }
-
-  // btns
-  &__links {
-    display: flex;
-    
-    // menu mobile
-    @include downTo(md) {
-      position: absolute;
-      opacity: 0;
-      flex-direction: column;
-      top: 0;
-      right: -215px;
-      width: 100%;
-      max-width: 215px;
-      background-color: $COLOR_BLUE;
-      padding: 120px 20px 20px 40px;
-      height: 100vh;
-      transition: all $ANIMATION_TIMING $ANIMATION_EASING;
-
-      // MENU CURSES
-      &--courses {
-        padding: 120px 20px 40px 20px;
-
-         &:before {
-          content: '';
-          transition: all 1ms linear;
-          position: fixed;
-          width: 100%;
-          max-width: 215px;
-          z-index: 1;
-          height: 12%;
-          top: 0;
-          right: 0;
-        }
-
-        &.isApple {
-          padding: 90px 20px 75px 20px;
-
-          &:before { 
-            display: none;
-          }
-        }
-        
-        ul {
-          overflow-y: scroll;
-          overflow-x: hidden;
-          height: 60vh;
-          padding-right: 8px;
-        }
-
-        li {
-          a {
-            display: flex;
-            width: 100%;
-            text-align: right;
-          }
-        }
-      }
-
-     
-    }
-
-    @include upTo(sm) {
-      align-items: center;
-      justify-content: flex-end;
-    }
-    
-    li {
-      position: relative;
-      margin-bottom: 31px;
-      @include downTo(md) {
-        transition: all 550ms $ANIMATION_EASING;
-        left: 40%;
-        opacity: 0;
-        
-        &.title {
-          display: flex;
-          align-items: flex-end;
-          justify-content: flex-end;
-          a {
-            text-align: right;
-            width: auto;
-          }
-          &:after {
-            content: '';
-            position: absolute;
-            display: flex;
-            width: 100%;
-            background-color: #ffffff;
-            height: 1px;
-          }
-        }
-      }
-      
-      @include upTo(sm) {
-        margin-bottom: 0;
-      }
-
-      a {
-        text-decoration: none;
-        color:white;
-        font-weight: $MEDIUM;
-        @include fontSize(18px);
-        padding: 10px 3px;
-        transition: all 250ms $ANIMATION_EASING;
-        
-        @include upTo(sm) {
-          padding: 5px 18px;
-        }
-
-        &:hover {
-          font-weight: $BLACK;
-        }
-      }
-      &:last-child a {
-        @include upTo(sm) {
-          padding-right: 0;
-        }
-      }
-    }
-  }
-
-  // Siguiente section despues de .header
-  & + section {
-    padding-top: 14rem;
-    @include upTo(sm) {
-      padding-top: 15.5rem;
     }
   }
 }

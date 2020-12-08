@@ -4,7 +4,7 @@
 
   small {
     color: $COLOR_GREY;
-    @include fontSize(14px);
+    @include fontSize(18px);
     position: absolute;
     top: -10px;
     font-weight: $REGULAR;
@@ -26,6 +26,7 @@
         pointer-events: all;
       }
       .arrow {
+        top: 1.7em;
         transform: rotateX(180deg);
       }
     }
@@ -58,14 +59,14 @@
 
       span {
         width: 100%;
-        text-transform: capitalize;
+        // text-transform: capitalize;
         letter-spacing: normal;
         font-weight: $REGULAR;
-        line-height: 1.15;
+        line-height: 1.5;
         color: $COLOR_INPUT;
         height: $INPUT_HEIGHT_DESKTOP;
         background-color: $COLOR_BG_INPUTS;
-        @include fontSize($INPUT_FONT_SIZE);
+        @include fontSize(18px);
         color: $COLOR_INPUT;
         padding: $INPUT_PADDING;
         border-radius: $INPUT_BORDER_RADIUS;
@@ -76,8 +77,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
+        b {
+          font-weight: $REGULAR;
+        }
+
+        &.icon {
+          line-height: 1;
+        }
+
         @include break(xs) {
-          @include fontSize($INPUT_FONT_SIZE_MOBILE);
+          @include fontSize(18px);
           height: $INPUT_HEIGHT_MOBILE;
           padding: $INPUT_PADDING_MOBILE;
           line-height: 1.5;
@@ -108,19 +117,22 @@
         width: 15px;
         right: 0;
         transition: $TRANSITION;
-
+        @extend .icon, .icon-arrow-down;
+        
         &:before {
-          content: "";
+          font-size: 0.7em;
+          font-weight: $BOLD;
+          color: #494949;
           position: absolute;
           bottom: 0px;
           width: 0; 
           height: 0; 
           top: 50%;
-          right: 10px;
+          right: 20px;
           transform: translateY(-50%);
-          border-left: 5px solid transparent;
-          border-right: 5px solid transparent;
-          border-top: 10px solid $COLOR_DARKGREY;
+          // border-left: 5px solid transparent;
+          // border-right: 5px solid transparent;
+          // border-top: 10px solid $COLOR_DARKGREY;
         }
       }
     }
@@ -159,6 +171,10 @@
       cursor: pointer;
       transition: $TRANSITION;
       white-space: nowrap;
+
+      b {
+        font-weight: $REGULAR;
+      }
 
       .icon {
         position: relative;
@@ -201,6 +217,43 @@
               right: 6%;
               transform: translateY(-50%);
             }
+          }
+        }
+      }
+    }
+
+    &--points {
+      .custom-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 42px;
+        padding-right: 13px;
+
+        em {
+          align-self: flex-end;
+          font-style: normal;  
+          @include fontSize(14px);
+          color: $COLOR_DOTS;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          border: 1px solid $COLOR_DOTS;
+          min-width: 15px;
+          left:13px;
+          height: 15px;
+          width: 15px;
+          border-radius: 100%;
+          display: flex;
+        }
+
+        &.selected {
+          background-color: transparent;
+          &:before {
+            border-color: $COLOR_CELESTE;
+            background-color: $COLOR_CELESTE;
           }
         }
       }

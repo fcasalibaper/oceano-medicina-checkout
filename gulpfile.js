@@ -30,7 +30,7 @@ sass.compiler = require('node-sass');
 ///////////
 // tasks //
 ///////////
-var nameFilesSrc = 'oceano';
+var nameFilesSrc = 'oceanoCheckout';
 
 // github pages
 gulp.task('deploy', function () {

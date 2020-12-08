@@ -1,0 +1,14 @@
+.card {
+  background-color: #ffffff;
+  &--lightblue {
+    background-color: $COLOR_CELESTE;
+  }
+
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+
+  @include upTo(lg) {
+    max-width: 1140px;
+    padding: 40px;
+  }
+}

@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { setInputFilter } from '../utils/utils';
 
 export default function FormValidation() {
   let titles = [];
@@ -12,6 +13,19 @@ export default function FormValidation() {
     ready : () => {
       oceanoForm.formValidation.init();
       oceanoForm.selectCustom.init();
+      oceanoForm.creditCard();
+      oceanoForm.monthYear();
+      setInputFilter($(".numbsSpace"), function(value) {
+        return /^[0-9\s]*$/.test(value);
+      });
+      setInputFilter($(".numbsDash"), function(value) {
+        return /^[0-9\/]*$/.test(value);
+      });
+      setInputFilter($(".numbs"), function(value) {
+        return /^[0-9]*$/.test(value);
+      });
+
+      
     },
 
     selectCustom : {
@@ -86,8 +100,19 @@ export default function FormValidation() {
           const selectedData = el;
           const $elementToChange = selectedData.parent().siblings('.custom-select__trigger');
 
-          // prrint values 
-          $elementToChange.find('span').html(selectedData.html());
+          // print values 
+          if (el.find('b').length) {
+            $elementToChange.find('span').html(selectedData.find('b').html());
+            const text = selectedData.find('b').text();
+            const cantidad = text.split(' cuota')[0];
+            const price = text.split(' $').pop();
+            const singularPlural = +cantidad > 1 ? 's' : ''
+            const concated = `<span class="cuotaValue">${cantidad} cuota${singularPlural}</span><span class="cuotaPrice">$${price}</span>`;
+
+            $('.checkout__summary__ul > li').find('.cuota').html(concated)
+          } else {
+            $elementToChange.find('span').html(selectedData.html());
+          }
           $elementToChange.find('input').val(selectedData.text());
 
           // states 
@@ -145,6 +170,26 @@ export default function FormValidation() {
           elPlaceholder.removeClass('placeholder')
         }
       }
+    },
+
+    creditCard: () => {
+      $('.creditCardText').keyup(function() {
+        var foo = $(this).val().split(" ").join(""); // remove hyphens
+        if (foo.length > 0) {
+          foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+        }
+        $(this).val(foo);
+      });
+    },
+
+    monthYear: () => {
+      $('.monthYear').keyup(function() {
+        var foo = $(this).val().split("/").join(""); // remove hyphens
+        if (foo.length > 0) {
+          foo = foo.match(new RegExp('.{1,2}', 'g')).join("/");
+        }
+        $(this).val(foo);
+      });
     },
 
     formValidation : {

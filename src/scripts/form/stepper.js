@@ -101,7 +101,7 @@ export default function Stepper() {
             oceanoStepper.dataEdition.inputManage('save');
           }
         } else {
-          el.text('Guardar');
+          el.text('Guardar cambios');
           oceanoStepper.dataEdition.inputManage('open');
         }
       },

@@ -1,0 +1,17 @@
+.data {
+  &__body {
+    &.active {
+      li {
+        border-bottom: 1px solid $COLOR_CELESTE;
+      }
+      span { display: none; }
+
+      input {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        border: 0;
+      }
+    }
+  }
+}

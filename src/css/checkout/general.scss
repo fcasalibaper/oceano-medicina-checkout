@@ -1,0 +1,383 @@
+.checkout {
+  overflow: visible;
+  padding: 0;
+  z-index: 10;
+
+  &__wrapper {
+    max-width: 760px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .card {
+    z-index: 1;
+    margin-top: 5.2rem;
+    margin-bottom: 3rem;
+    @include upTo(sm) {
+      margin-top: -2.7rem;
+    }
+  }
+
+  // data edition
+  .data {
+    padding: 4rem 0 2rem;
+    header {
+      display: flex;
+      padding: 0;
+      margin-bottom: 2rem;
+      flex-direction: column;
+
+      @include upTo(sm) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      h4 {
+        color: #000000;
+        @include fontSize(32px);
+        font-weight: $BOLD;
+        color: $COLOR_BLUE;
+        @include upTo(sm) {
+          @include fontSize(38px);
+        }
+      }
+      a {
+        color: $COLOR_BLUE;
+        text-decoration: underline;
+        padding: 1rem 0;
+        @include fontSize(16px);
+
+        @include upTo(sm) {
+          @include fontSize(18px);
+          padding: 0;
+        }
+
+        &:visited,
+        &:active {
+          color: $COLOR_BLUE;
+        }
+      }
+    }
+
+    // ul
+    &__body {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        width: 100%;
+        margin-bottom: 1.7rem;
+        display: flex;
+        flex-direction: column;
+
+        @include upTo(sm) {
+          flex-direction: row;
+          margin-bottom: 1.2rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      input {
+        @extend %hiddenInput;
+      }
+
+      label {
+        margin-bottom: .3rem;
+        color: $COLOR_DARKGREY;
+        margin-right: .5em;
+      }
+      
+      label,
+      span, input {
+        white-space: nowrap;
+        color: $COLOR_DARKGREY;
+        font-weight: $REGULAR;
+        @include fontSize(18px);
+        @include upTo(sm) {
+          @include fontSize(20px);
+        }
+      }
+
+      span, input {
+        color: $COLOR_DARKGREY2;
+        font-weight: $MEDIUM !important;
+
+        &::placeholder {
+          color: $COLOR_DARKGREY2;
+          font-weight: $MEDIUM;
+        }
+      }
+    }
+  }
+
+  form {
+    .form__wrapper {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      
+      @include upTo(sm) {
+        max-width: 475px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .custom-select-wrapper {
+        &:first-child {
+          margin-right: 0;
+          @include upTo(sm) {
+            margin-right: 0.7em;
+          }
+        }
+      }
+
+      legend {
+        display: flex;
+        margin-bottom: 3rem;
+        h3 {
+          display: flex;
+          flex-direction: column;
+          color: $COLOR_BLUE;
+          font-weight: $BOLD;
+          @include fontSize(32px);
+          line-height: 1.5;
+
+          @include upTo(sm) {
+           @include fontSize(38px);
+          }
+          small {
+            font-weight: $REGULAR;
+            @include fontSize(16px);
+          }
+        }
+      }
+    }
+  }
+
+  // CARD LIGHTBLUE
+  &__detailHightlight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    hgroup {
+      margin-bottom: 3rem;
+      @include upTo(sm) {
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 26px;
+        line-height: 33px;
+        color: #ffffff;
+        font-weight: $BOLD;
+
+        @include upTo(sm) {
+         font-size: 28px;
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: 50px;
+        line-height: 1;
+        color: #ffffff;
+
+        b {
+          font-weight: $BOLD;
+        }
+
+        small {
+          position: relative;
+          font-size: .45em;
+          line-height: 1.5em;
+          margin-left: .7em;
+          font-weight: $MEDIUM;
+
+          &:after,
+          &:before {
+            content: '';
+            width: 60%;
+            height: 3px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: $COLOR_BLUE;
+          }
+
+          &:before {
+            transform: translate(-40%, -50%) rotate(-25deg);
+          }
+          &:after {
+            transform: translate(-40%, -50%) rotate(25deg);
+          }
+        }
+      }
+
+      span {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: $MEDIUM;
+        color: #ffffff;
+        margin-top: 1.4rem;
+
+        @include upTo(sm) {
+         margin-top: 0;
+        }
+      }
+    }
+
+    &.card {
+      max-width: 100%;
+      z-index: 2;
+      margin-top: -7.2rem;
+      padding: 24px 33px;
+      @include upTo(sm) {
+        margin-top: -3.2rem;
+        padding: 28px 15px 28px 55px;
+      }
+      @include upTo(md) {
+        margin-top: -6.2rem;
+      }
+    }
+  }
+
+  &__summary {
+    border-radius: 8px;
+    background-color: $COLOR_LIGHTGREY2;
+    padding: 22px;
+    margin-bottom: 3.5rem;
+    box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.09);
+    
+    @include upTo(sm) {
+      margin-bottom: 4.2rem;
+      padding: 30px 45px;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .7em;
+
+      span {
+        font-weight: $MEDIUM;
+        @include fontSize(22px);
+        color: $COLOR_BLUE;
+
+        @include upTo(sm) {
+         
+        }
+      }
+    }
+
+    &__ul {
+      margin-bottom: 2.3em;
+      li {
+        display: flex;
+        justify-content: space-between;
+        font-weight: $REGULAR;
+        @include fontSize(18px);
+        flex-direction: column;
+
+        @include upTo(sm) {
+         flex-direction: row;
+         @include fontSize(20px);
+        }
+
+        span {
+          color: $COLOR_DARKGREY4;
+        }
+
+        .cuota {
+          display: flex;
+          justify-self: space-between;
+          span {
+            @include fontSize(20px);
+            font-weight: $BOLD;
+            &.cuotaValue {
+              margin-right: 1.5rem;
+            }
+          }
+        }
+
+      }
+    }
+
+    &__info {
+      font-weight: $REGULAR;
+      @include fontSize(18px);
+      color: $COLOR_BLUE;
+
+      @include upTo(sm) {
+        @include fontSize(20px);
+      }
+    }
+  }
+
+  button {
+    margin: auto;
+    min-width: 285px;
+    border-radius: 8px;
+    background-color: $COLOR_GREY;
+    border-color: $COLOR_GREY;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+
+    @include upTo(sm) {
+      flex-direction: row;
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+
+    &__item {
+      display: flex;
+      align-self: flex-start;
+      
+      &:nth-child(2) {
+        padding-left: calc(50px + 1.7rem);
+        margin-top: 3.4em;
+        @include upTo(sm) {
+          padding-left: 1rem;
+          margin-top: 0;
+        }
+      }
+     
+      svg {
+        width: 50px;
+        min-width: 50px;
+        margin-right: 1.7rem;
+      }
+      span {
+        @include fontSize(18px);
+        line-height: 1.4;
+        color: $COLOR_DARKGREY4;
+
+        @include upTo(sm) {
+          @include fontSize(20px);
+        }
+      }
+
+      &--blue {
+        span {
+          color: $COLOR_BLUE;
+        }
+      }
+    }
+  }
+}
