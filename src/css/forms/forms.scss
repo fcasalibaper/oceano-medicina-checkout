@@ -74,12 +74,20 @@ form {
   width: 100%;
 
   // text validation
-  small.small-text {
+  label.errorMsg {
     display: none;
-    margin-top: .5em;
+    position: absolute;
     order: 3;
-    font-size: .95em;
-    color: $COLOR_PLACEHOLDER;
+    bottom: -3em;
+    left: 0;
+    color: $COLOR_ROJO;
+    font-weight: $REGULAR;
+    font-style: italic;
+    line-height: 1.2;
+    @include fontSize(12px);
+    @include upTo(sm) {
+      @include fontSize(14px);
+    }
   }
 
   label {

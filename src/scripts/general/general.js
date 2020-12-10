@@ -15,6 +15,22 @@ export default function General() {
             oceano.scrollElement('#referenceFixedPosition');
             oceano.dropDown();
             oceano.openCloseChild();
+
+            var $fields = $('input.nroCard, input.venc, input.cvc');
+  
+            $fields.on('keyup change', function() {
+                if (allFilled($fields)) {
+                    $('button[type="submit"]').removeAttr('disabled');
+                    console.log('llenos')
+                }
+            });
+
+            function allFilled($fields) 
+            {
+                return $fields.filter(function() {
+                return this.value === ''; 
+                }).length == 0;
+            }
         },
 
         onScroll : () => {

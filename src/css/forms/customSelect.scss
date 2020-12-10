@@ -66,7 +66,7 @@
         color: $COLOR_INPUT;
         height: $INPUT_HEIGHT_DESKTOP;
         background-color: $COLOR_BG_INPUTS;
-        @include fontSize(18px);
+        @include fontSize(20px);
         color: $COLOR_INPUT;
         padding: $INPUT_PADDING;
         border-radius: $INPUT_BORDER_RADIUS;
@@ -260,11 +260,13 @@
     }
 
     &.country {
-      width: 115%;
-      max-width: 115%;
-      @include upTo(sm) {
-        width: 105%;
-      }
+      width: 100%;
+      max-width: 100%;
+      // width: 115%;
+      // max-width: 115%;
+      // @include upTo(sm) {
+      //   width: 105%;
+      // }
       .custom-option {
         @include downTo(md) {
           @include fontSize(17px);

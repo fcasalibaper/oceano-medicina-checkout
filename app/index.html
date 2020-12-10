@@ -119,10 +119,16 @@
           </div>
 
           <div class="form-row">
-            <div class="col colNoWrap xCenter">
-              <input id="nroCard" type="text" class="form-control col-xs-6 creditCardText numbsSpace" placeholder="Número de tarjeta*" minlength="13" maxlength="19" required />
-              <input id="venc" type="text" class="form-control numbsDash col-xs-3 monthYear" placeholder="MM/AA*" minlength="5" maxlength="5" required />
-              <input id="cvc" type="password" class="form-control numbs col-xs-3" placeholder="CVC*" minlength="3" maxlength="3" required/>
+            <div class="col colWrap xCenter cardDataWrapper">
+              <input id="nroCard" type="text" class="form-control col-xs-7 creditCardText numbsSpace nroCard" placeholder="Número de tarjeta*" minlength="13" maxlength="19" required />
+
+              <label for="nroCard" class="errorMsg">El número ingresado no es un formato válido.</label>
+
+              <input id="venc" type="text" class="form-control numbsDash col-xs-3 monthYear smallText venc" placeholder="MM/AA*" minlength="5" maxlength="5" required />
+
+              <input id="cvc" type="password" class="form-control numbs col-xs-2 smallText cvc" placeholder="CVC*" minlength="3" maxlength="3" required/>
+
+              <img class="cardDataWrapper__cardImg" src="../images/cardPlaceholder.jpg" alt="card-image" />
             </div>
           </div>
           
@@ -184,7 +190,7 @@
           </div>
         </div>
         
-        <button type="submit" class="btn btn--filled btn--filled--secondary">PAGAR</button>
+        <button type="submit" class="btn btn--filled btn--filled--secondary" disabled>PAGAR</button>
       </form>
 
       <!-- footer -->

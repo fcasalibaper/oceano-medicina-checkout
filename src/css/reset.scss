@@ -1,7 +1,7 @@
 $scrollbartrackcolor : transparent;
-$scrollbarcolor : white;
-$scrollbarsize : 3px;
-$scrollbarminlength : 3px; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
+$scrollbarcolor : $COLOR_DOTS;
+$scrollbarsize : 4px;
+$scrollbarminlength : 4px; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
 
 /* RESET */
 :root {font-size: $ROOT}
@@ -38,7 +38,7 @@ handle would look like */
 
 ::-webkit-scrollbar-thumb { 
 	background-color: $scrollbarcolor;
-	border-radius: 2px;
+	border-radius: 0;
 } 
 /* tells the browser how will the  
 path of the handle will look like */ 
