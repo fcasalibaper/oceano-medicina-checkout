@@ -1,54 +1,58 @@
-form.was-validated {
-  .form-control {
-    &:valid, .is-valid {
-      border-bottom-color: $COLOR_VALID_FORM;
-
-      &:focus {
-        box-shadow: 0 0 0 0;
-      }
-    }
-
-    &:invalid, .is-invalid {
-      border-bottom-color: $COLOR_INVALID_FORM;
-
-      &:focus {
-        box-shadow: 0 0 0 0;
-      }
-
-      // & + label,
-      & + label.errorMsg {
-        color: $COLOR_INVALID_FORM;
-        display: flex;
-      }
-    }
-  }
-
-  .form-check-input,
-  .form-check-radio {
-    &:valid ~ .form-check-label,
-    &:valid ~ .form-radio-label,
-    .is-valid ~ .form-check-label,
-    .is-valid ~ .form-radio-label {
-      color: $COLOR_INPUT;
-      // &:before {
-      //   border-color: coral;
-      // }
-    }
-  }
-
-  .form-check-input,
-  .form-check-radio {
-    &:invalid ~ .form-check-label,
-    &:invalid ~ .form-radio-label,
-    .is-invalid ~ .form-check-label,
-    .is-invalid ~ .form-radio-label {
-      color: $COLOR_INPUT;
-      &:before {
-        border-color: $COLOR_INVALID_FORM !important;
-      }
-    }
-  }
+form.was-validated.error {
+  label.errorMsg { display: flex; }
 }
+
+// form.was-validated {
+//   .form-control {
+//     &:valid, .is-valid {
+//       border-bottom-color: $COLOR_VALID_FORM;
+
+//       &:focus {
+//         box-shadow: 0 0 0 0;
+//       }
+//     }
+
+//     &:invalid, .is-invalid {
+//       border-bottom-color: $COLOR_INVALID_FORM;
+
+//       &:focus {
+//         box-shadow: 0 0 0 0;
+//       }
+
+//       // & + label,
+//       & + label.errorMsg {
+//         color: $COLOR_INVALID_FORM;
+//         display: flex;
+//       }
+//     }
+//   }
+
+  // .form-check-input,
+  // .form-check-radio {
+  //   &:valid ~ .form-check-label,
+  //   &:valid ~ .form-radio-label,
+  //   .is-valid ~ .form-check-label,
+  //   .is-valid ~ .form-radio-label {
+  //     color: $COLOR_INPUT;
+  //     // &:before {
+  //     //   border-color: coral;
+  //     // }
+  //   }
+  // }
+
+  // .form-check-input,
+  // .form-check-radio {
+  //   &:invalid ~ .form-check-label,
+  //   &:invalid ~ .form-radio-label,
+  //   .is-invalid ~ .form-check-label,
+  //   .is-invalid ~ .form-radio-label {
+  //     color: $COLOR_INPUT;
+  //     &:before {
+  //       border-color: $COLOR_INVALID_FORM !important;
+  //     }
+  //   }
+  // }
+// }
 
 // checkbox
 input.form-check-input {

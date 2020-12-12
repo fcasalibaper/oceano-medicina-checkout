@@ -42,19 +42,19 @@
         width: 0;
         height: 0;
 
-        &.is-invalid,
-        &:invalid {
-          & + span {
-            border-bottom-color: $COLOR_INVALID_FORM;
-          }
-        }
+        // &.is-invalid,
+        // &:invalid {
+        //   & + span {
+        //     border-bottom-color: $COLOR_INVALID_FORM;
+        //   }
+        // }
 
-        &:valid,
-        .is-valid {
-          & + span {
-            border-bottom-color: $COLOR_VALID_FORM;
-          }
-        }
+        // &:valid,
+        // .is-valid {
+        //   & + span {
+        //     border-bottom-color: $COLOR_VALID_FORM;
+        //   }
+        // }
       }
 
       span {

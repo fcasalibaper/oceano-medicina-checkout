@@ -15,6 +15,8 @@ export default function FormValidation() {
       oceanoForm.selectCustom.init();
       oceanoForm.creditCard();
       oceanoForm.monthYear();
+      oceanoForm.formValidation.buttonValidation();
+
       setInputFilter($(".numbsSpace"), function(value) {
         return /^[0-9\s]*$/.test(value);
       });
@@ -198,18 +200,36 @@ export default function FormValidation() {
           oceanoForm.formValidation.inpurCounterLimit();
       },
       validateForm : () => {
-          var forms = $('.needs-validation');
-          Array.prototype.filter.call(forms, function(form) {
-              form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    
-                }
-                form.classList.add('was-validated');
-                console.log('all valid')
-              }, false);
-          });
+        var forms = $('.needs-validation');
+        Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+              console.log('all valid')
+            }, false);
+        });
+      },
+
+      buttonValidation : () => {
+        // ACTIVE BUTTON
+        var $fields = $('input.nroCard, input.venc, input.cvc, input.nameCard');
+  
+        $fields.on('keyup change', function() {
+          if (allFilled($fields)) {
+            $('button[type="submit"]').removeAttr('disabled');
+          } else {
+            $('button[type="submit"]').attr('disabled', true);
+          }
+        });
+
+        const allFilled = ($fields) => {
+          return $fields.filter(function() {
+            return this.value === '' || this.value === undefined; 
+          }).length == 0;
+        }
       },
 
       inpurCounterLimit : () => {

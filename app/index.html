@@ -115,7 +115,7 @@
           </div>
 
           <div class="form-row">
-              <input id="nameCard" type="text" class="form-control col-xs-12" minlength="3" placeholder="Nombre de títular de tarjeta*" required />
+              <input id="nameCard" type="text" class="form-control col-xs-12 nameCard" minlength="3" placeholder="Nombre de títular de tarjeta*" value="" required/>
           </div>
 
           <div class="form-row">
@@ -124,11 +124,11 @@
 
               <label for="nroCard" class="errorMsg">El número ingresado no es un formato válido.</label>
 
-              <input id="venc" type="text" class="form-control numbsDash col-xs-3 monthYear smallText venc" placeholder="MM/AA*" minlength="5" maxlength="5" required />
+              <input id="venc" type="text" class="form-control numbsDash col-xs-3 monthYear smallText venc" placeholder="MM/AA*" minlength="5" maxlength="5" required/>
 
               <input id="cvc" type="password" class="form-control numbs col-xs-2 smallText cvc" placeholder="CVC*" minlength="3" maxlength="3" required/>
 
-              <img class="cardDataWrapper__cardImg" src="../images/cardPlaceholder.jpg" alt="card-image" />
+              <img class="cardDataWrapper__cardImg" src="images/cardPlaceholder.jpg" alt="card-image" />
             </div>
           </div>
           
@@ -168,9 +168,7 @@
           <ul class="checkout__summary__ul">
             <li>
               <span class="detail"><b>1</b> Curso Superior de Gastroenterología</span>
-              <div class="cuota hidden-xs">
-                
-              </div>
+              <div class="cuota hidden-xs"></div>
             </li>
           </ul>
 
@@ -180,8 +178,7 @@
 
           <ul class="checkout__summary__ul checkout__summary__ul--prices visible-xs">
             <li>
-              <div class="cuota">
-              </div>
+              <div class="cuota"></div>
             </li>
           </ul>
 
