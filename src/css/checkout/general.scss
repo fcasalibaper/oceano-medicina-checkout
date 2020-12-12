@@ -67,6 +67,7 @@
       flex-direction: column;
 
       li {
+        overflow: hidden;
         width: 100%;
         margin-bottom: 1.7rem;
         display: flex;
@@ -81,6 +82,18 @@
         @include upTo(sm) {
           flex-direction: row;
           margin-bottom: 1.2rem;
+        }
+
+        &:first-child {
+          input {
+            width: 105% !important;
+            min-width: 105% !important;
+
+            @include upTo(sm) {
+              width: 60% !important;
+              min-width: 60% !important;
+            }
+          }
         }
 
         &:last-child {
